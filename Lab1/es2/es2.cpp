@@ -15,9 +15,9 @@ int main()
 }
 /*
 in quale delle sezioni riportate da size compare la variabile locale automatica?
-bss
+
 perché la variabile locale automatica è “automatica”?
-Non viene inizializzata ad un valore dall'utente ma la gestisce il compilatore inizializzandola a 0
+Perche' il compilatore gestisce autonamamente la dimensione in memoria di suddetta variabile.
 cosa succede togliendo l’inizializzazione alle variabili statiche? Perché?
 Vengono inizializzate di default a 0 e non sara' possibile modificarle, viene fatto cio' perche altrimenti avremo un errore ogni volta che utilizziamo suddetta variabile.
 Qual è lo scope di ciascuna delle variabili create?
