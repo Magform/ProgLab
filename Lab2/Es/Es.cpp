@@ -8,6 +8,7 @@ private:
     int denominator {1};
 
 public:
+
     Rational(){
         numerator=0;
         denominator=1;
@@ -34,80 +35,62 @@ public:
         this->denominator=toAsi.denominator;
     }
 
-    Rational operator+(Rational& toSumOne){
-        int r {1};
-        int l {1};
-        int d {1};
-
-        r=this->numerator*toSumOne.denominator;
-        l=this->denominator*toSumOne.numerator;
-        d=this->denominator*toSumOne.denominator;
-        Rational a=Rational(r+l, d);
-        return a;
+    Rational operator+(Rational& toSum){
+        int upRight = this->numerator*toSum.denominator;
+        int upLeft  = this->denominator*toSum.numerator;
+        int denom   = this->denominator*toSum.denominator;
+        Rational result = Rational(upRight+upLeft, denom);
+        return result;
     }
 
-    Rational operator+(int toSumOne){
-        int r {1};
-        int l {1};
-        int d {1};
-
-        r=this->numerator;
-        l=this->denominator*toSumOne;
-        d=this->denominator;
-        Rational a=Rational(r+l, d);
-        return a;
+    Rational operator+(int toSum){
+        int upRight = this->numerator;
+        int upLeft  = this->denominator*toSum;
+        int denom   = this->denominator;
+        Rational result = Rational(upRight+upLeft, denom);
+        return result;
     }
 
-    Rational operator-(Rational& toSumOne){
-        int r {1};
-        int l {1};
-        int d {1};
-
-        r=this->numerator*toSumOne.denominator;
-        l=this->denominator*toSumOne.numerator;
-        d=this->denominator*toSumOne.denominator;
-        Rational a=Rational(l-r, d);
-        return a;
+    Rational operator-(Rational& toSub){
+        int upRight = this->numerator*toSub.denominator;
+        int upLeft  = this->denominator*toSub.numerator;
+        int denom   = this->denominator*toSub.denominator;
+        Rational result = Rational(-upLeft+upRight, denom);
+        return result;
     }
 
-    Rational operator*(Rational& toSumOne){
-        int r {1};
-        int d {1};
-
-        r=this->numerator*toSumOne.numerator;
-        d=this->denominator*toSumOne.denominator;
-        Rational a=Rational(r, d);
-        return a;
+    Rational operator*(Rational& toMul){
+        int numer = this->numerator*toMul.numerator;
+        int denom =this->denominator*toMul.denominator;
+        Rational result=Rational(numer, denom);
+        return result;
     }
 
-    Rational operator/(Rational& toSumOne){
-        int r {1};
-        int d {1};
-
-        r=this->numerator*toSumOne.denominator;
-        d=this->denominator*toSumOne.numerator;
-        Rational a=Rational(r, d);
-        return a;
+    Rational operator/(Rational& toDiv){
+        int numer = this->numerator*toDiv.denominator;
+        int denom = this->denominator*toDiv.numerator;
+        Rational result = Rational(numer, denom);
+        return result;
     }
 
-    bool operator==(Rational& toSumOne){
-        if(toSumOne.numerator==this->numerator){
-            if(toSumOne.denominator==this->denominator){
+    bool operator==(Rational& toCheck){
+        if(toCheck.numerator==this->numerator){
+            if(toCheck.denominator==this->denominator){
                 return true;
             }
         }
         return false;
     }
 
-    bool operator>(Rational& toSumOne){
-        if((this->numerator/this->denominator)>(toSumOne.numerator/toSumOne.denominator)){
+    bool operator>(Rational& toCheck){
+        if((this->to_double())>(toCheck.to_double())){
                 return true;
         }
         return false;
     }
 
-    bool operator<(Rational& toSumOne){
-        if((this->numerator/this->denominator)<(toSumOne.numerator/toSumOne.denominator)){
+    bool operator<(Rational& toCheck){
+        if((this->to_double())<(toCheck.to_double())){
                 return true;
         }
         return false;
@@ -118,45 +101,54 @@ public:
     }
 
     double to_double(){
-        return this->numerator/this->denominator;
+        double result = (double)this->numerator/(double)this->denominator;
+        return result;
     }
 };
 
 
 
 int main(){
+
+    cout<<"Starting testing: "<<endl;
     Rational test1 = Rational();
     Rational test2 = Rational(12);
     Rational test3 = Rational(18, 4);
     Rational test4 = Rational(11, 3);
 
-    cout<<test1;
-    cout<<test2;
-    cout<<test3;
-    cout<<test4;
+    cout<<"test1: "<<test1;
+    cout<<"test2: "<<test2;
+    cout<<"test3: "<<test3;
+    cout<<"test4: "<<test4;
 
+    cout<<"Assign test2 to test1"<<endl;
     test1=test2;
+    cout<<"test1: "<<test1;
 
-    cout<<test1;
-
+    cout<<"Assign test4 + test3 to test2"<<endl;
     test2=test4+test3;
-    cout<<test2;
+    cout<<"test2: "<<test2;
 
+    cout<<"Assign test4 - test3 to test2"<<endl;
     test2=test4-test3;
-    cout<<test2;
+    cout<<"test2: "<<test2;
 
-    test2=test4*test2;
-    cout<<test2;
+    cout<<"Assign test4 * test3 to test2"<<endl;
+    test2=test4*test3;
+    cout<<"test2: "<<test2;
 
-    test2=test4/test2;
-    cout<<test2;
+    cout<<"Assign test4 / test3 to test2"<<endl;
+    test2=test4/test3;
+    cout<<"test2: "<<test2;
 
+    cout<<"test2 == test1 ?"<<endl;
     if(test2==test3){cout<<"vero"<<endl;}else{cout<<"falso"<<endl;}
+    cout<<"test2 > test1 ?"<<endl;
     if(test2>test3){cout<<"vero"<<endl;}else{cout<<"falso"<<endl;}
+    cout<<"test2 < test1 ?"<<endl;
     if(test2<test3){cout<<"vero"<<endl;}else{cout<<"falso"<<endl;}
 
-    test1
-    cout<<test4.to_double()<<" "<<test1.to_double();
+    cout<<"test4 to double: "<<test4.to_double()<<endl;
     return 0;
 }
 
