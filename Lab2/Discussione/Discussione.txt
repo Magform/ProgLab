@@ -1,1 +1,10 @@
-Private e Public
+1. What are the two parts of a class?
+Parte private e parte pubblica
+2. What is the difference between the interface and the implementation in a class?
+L'interfaccia sono solo le firme dei metodi senza un vero e proprio corpo, le implementazioni invece hanno, oltre alla firma, un vero é proprio corpo e sono quindi subito utilizzabili
+3. Why is a constructor used for the Date type instead of an init_day() function?
+Perché il costruttore viene chiamato automaticamente alla creazione di una istanza della classe, una funzione invece andrebbe richiamata manualmente lasciando spazio a possibili errori e/o a variabili non correttamente definite
+4. What is an invariant? Give examples.
+É una codizione che rimane verificata dopo alcune operazioni, per esempio la somma di X e Y interi strettamente positivi sará sempre maggiore a ciascuno dei due interi.
+5. When should functions be put in the class definition, and when should they be defined outside he class? Why?
+É meglio definirle fuori infatti andandole a definire dentro si dichiarano come Inline portando a piu uso di memoria, aumento di tempo di compilazione, aumento della dimensione dei file eseguibile ed altri problemi. Dovrebbero invece essere dichiarate all'interno della classe le funzioni friend, le funzioni inline e le funzioni memebro statiche
