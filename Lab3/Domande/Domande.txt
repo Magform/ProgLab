@@ -1,0 +1,12 @@
+1. What is a dereference operator and why do we need one?
+E' un operatore (* su C++) che permette di ottenere il valore puntato da un puntatore.
+2. What is an address? How are memory addresses manipulated in C++?
+Un indirizzo di memoria e' un qualcosa che punta ad un particolare punto nella memoria della macchina dove viene allocato qualcosa.
+In C++ gestiamo gli indirizzi di memoria grazie ai Reference e ai Pointers che ci permettono di accedere direttamente alla memoria del nostro calcolatore
+3. What information about a pointed-to object does a pointer have? What useful information does it lack?
+I puntatori contengono oltre all'informazione del'inidirizzo anche il tipo del dato che viene puntato.
+Nei puntatori manca pero' la conoscenza se in quel particolare punto della memoria si trova o meno qualcosa del tipo che stanno provando a puntare, rischiando cosi di accedere a qualcosa al quale non dovrebbero accedere o di leggere qualcosa a loro incomprensibile. I puntatori inoltre non hanno modo di capire se quella determinata locazione di memoria e' o meno inizializzata.
+4. What can a pointer point to?
+Un puntatore puo' puntare ad un dato di un tipo qualunque oppure ad un tipo non dichiarato.
+5. When do we need a pointer (instead of a reference or a named object)?
+Possiamo utilizzare i puntatori quando vogliamo accedere ad un array, quando vogliamo passare un dato per riferimento (avendo quindi ottimizzazoni al lato tempo), per ritoranre piu' valori, per allocare memoria in modo dinamico e per implementare strutture dati complesse
