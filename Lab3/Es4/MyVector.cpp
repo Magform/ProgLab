@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include "MyVector.h"
 using namespace std;
 
@@ -102,4 +103,15 @@ double MyVector::safe_get(int position){
     }
     cout<<"errore, questa posizione non esiste"<<endl;
     return 0;
+}
+
+string MyVector::toString(){
+    string out {};
+    out += "{";
+    for(int i=0; i<vectorLength; i++){
+        out += to_string(point[i]);
+        out += " ";
+    }
+    out += "}";
+    return out;
 }

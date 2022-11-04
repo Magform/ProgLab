@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 class MyVector{
@@ -9,7 +10,7 @@ private:
 
 public:
     //costruttori
-    MyVector(int length = 0);
+    MyVector(int length);
     MyVector(initializer_list<double> doubleList);
     MyVector(const MyVector& inVec);
     MyVector(MyVector&& inVec);
@@ -28,4 +29,5 @@ public:
     int size() const;
     void safe_set(int position, double value);
     double safe_get(int position);
+    string toString();
 };
