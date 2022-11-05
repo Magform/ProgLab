@@ -1,8 +1,11 @@
+//Made by @Magform
+//It's not about the gold, it's about the glory
 #include <iostream>
 #include "MyVector.h"
 using namespace std;
 
 int main(){
+    //eseguiamo tutti i test necessari (per eseuguirli utilizzo quasi sempre le funzioni membro size() e toString() che ipotizzo corrette)
     cout<<"Testing costruttore con argomento int = 13"<<endl;
     MyVector v1=MyVector(13);
     cout<<"Dimensione: "<<v1.size()<<endl;

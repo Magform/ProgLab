@@ -1,3 +1,5 @@
+//Made by @Magform
+//It's not about the gold, it's about the glory
 #include <iostream>
 using namespace std;
 
@@ -24,6 +26,7 @@ void print_array_lenght(double* arr){
     cout<<endl;
 }
 
+//funzione che passa l'array in modo leggermente diverso ma non vediamo differenze nel risultato
 void print_array_lenght2(const double arr[]){
     cout<<"Dimensione dalla funzione: "<<sizeof(arr)<<endl;
     cout<<"Accesso elementi: ";
