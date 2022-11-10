@@ -19,7 +19,7 @@ public:
     void add(Link* precedente);
     void erase();
     Link* find(std::string toFind);
-    Link* advance(Link* iniziale, int toSkip); //toFix
+    Link* advance(int toSkip);
     void print_all();
 
     //punto 2 esercizio (da fare)

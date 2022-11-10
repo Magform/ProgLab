@@ -48,19 +48,27 @@ Link* Link::find(std::string toFind){
     }
 }
 
-//memebr function advance isn't working yet
-Link* Link::advance(Link* iniziale, int toSkip){
-    if(toSkip>=0){
+
+Link* Link::advance(int toSkip){
+    Link* checking = this;
+    if(toSkip>0){
         while(toSkip--){
-            iniziale=iniziale->succ;
+            if(checking->succ){
+                checking = checking->succ;
+            }else{
+                return nullptr;
+            }
         }
-    }
-    if(toSkip<0){
+    }else if(toSkip<0){
         while(toSkip++){
-            iniziale=iniziale->prev;
+            if(checking->prev){
+                checking = checking->prev;
+            }else{
+                return nullptr;
+            }
         }
     }
-    return iniziale;
+    return checking;
 }
 
 void Link::print_all(){
@@ -82,6 +90,35 @@ void Link::print_all(){
 
 //punto 2 esercizio
 void Link::push_back(std::string toPush){
-
+    Link* checking = this;
+    while(checking->prev)checking=checking->prev;
+    Link* toInsert = new Link(toPush, nullptr, checking);
+    checking->prev = toInsert;
 }
 
+void Link::push_front(std::string toPush){
+    Link* checking = this;
+    while(checking->succ)checking=checking->succ;
+    Link* toInsert = new Link(toPush, checking, nullptr);
+    checking->succ = toInsert;
+}
+
+std::string Link::pop_back(){
+    Link* checking = this;
+    while(checking->prev)checking=checking->prev;
+    if(checking->succ){
+        (checking->succ)->prev = nullptr;
+        checking->succ = nullptr;
+    }
+    return checking->value;
+}
+
+std::string Link::pop_front(){
+    Link* checking = this;
+    while(checking->succ)checking=checking->succ;
+    if(checking->prev){
+        (checking->prev)->succ = nullptr;
+        checking->prev = nullptr;
+    }
+    return checking->value;
+}
