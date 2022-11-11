@@ -1,3 +1,5 @@
+//Made by @Magform
+//It's not about the gold, it's about the glory
 #include "Link.h"
 
 using namespace std;
