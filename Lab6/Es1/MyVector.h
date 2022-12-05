@@ -37,9 +37,14 @@ public:
     void reserve(int toReserve);
     T & at(int position);
     string toString();
+    string toString() const;
 
     int size() const;
     string toStringForTesting();
+
+    template<typename R>
+    friend std::ostream& operator<<(std::ostream& os, const MyVector<R> toPrint);
+
 };
 
 #include "MyVector.hpp"

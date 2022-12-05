@@ -90,4 +90,7 @@ int main(){
     cout<<v2.toString()<<endl;
     cout<<v5.toString()<<endl;
 
+    cout<<"Testo overload operator<< stampando v1"<<endl;
+    cout<<v1<<endl;
+
 }

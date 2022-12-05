@@ -200,4 +200,22 @@ string MyVector<T>::toString(){
     return out;
 }
 
+template<typename T>
+string MyVector<T>::toString() const{
+    string out {};
+    out += "{";
+    for(int i=0; i<currVector; i++){
+        out += to_string(point[i]);
+        out += " ";
+    }
+    out += "}";
+    return out;
+}
+
+template<typename R>
+std::ostream& operator<<(std::ostream& os, const MyVector<R> toPrint){
+    os<<toPrint.toString()<<endl;
+    return os;
+};
+
 #endif //MyVector_hpp
