@@ -93,4 +93,10 @@ int main(){
     cout<<"Testo overload operator<< stampando v1"<<endl;
     cout<<v1<<endl;
 
+    cout<<"Creo un vettore di string e provo operator<<"<<endl;
+    MyVector<string> v10;
+    v10.push_back("casa");
+    v10.push_back("in");
+    v10.push_back("montagna");
+    cout<<v10<<endl;
 }

@@ -25,9 +25,6 @@ MyVector<T>::MyVector(int length){
         T * vec = new T[maxVector];
         point = vec;
     }
-    for(int i=0; i<length; i++){
-        point[i] = 0;
-    }
 }
 
 template<typename T>
@@ -214,7 +211,11 @@ string MyVector<T>::toString() const{
 
 template<typename R>
 std::ostream& operator<<(std::ostream& os, const MyVector<R> toPrint){
-    os<<toPrint.toString()<<endl;
+    os<<"{";
+    for(int i=0; i<toPrint.currVector; i++){
+        os<<toPrint.point[i]<<" ";
+    }
+    os<<"}";
     return os;
 };
 
