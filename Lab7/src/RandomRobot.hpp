@@ -5,7 +5,7 @@
 
 using namespace std;
 void RandomRobot::move(const Maze& labirinto){
-    srand(1232);
+    srand(time(0));
     bool bad = true;
     while(bad){
         int location = rand()%8+1;

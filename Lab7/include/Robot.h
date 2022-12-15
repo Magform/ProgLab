@@ -13,6 +13,7 @@ public:
     void set(const Maze& labirinto);
     virtual void move(const Maze& labirinto){}
     string getPos();
+    bool end(const Maze& labirinto);
 };
 
 #include "../src/Robot.hpp"

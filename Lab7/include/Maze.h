@@ -15,6 +15,7 @@ private:
 public:
     int getXPos() const;
     int getYPos() const;
+    int get(int y, int x) const;
     void fileToMaze(string fileToOpen);
     bool test(int x, int y) const;
     friend ostream& operator<<(ostream& os, const Maze toPrint);

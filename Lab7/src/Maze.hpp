@@ -45,6 +45,10 @@ int Maze::getYPos() const{
     return yPos;
 }
 
+int Maze::get(int y, int x) const{
+    return maze[y][x];
+}
+
 bool Maze::test(int x, int y) const{
     if(x<=8 && y<=8 && x>=0 && y>=0){
         if(maze[y][x]!=0){

@@ -11,19 +11,24 @@ int main(){
     maze.fileToMaze("toRead");
     cout<<maze;
 
+    int totalMovement = 0;
+
     RandomRobot Rbot;
     Rbot.set(maze);
-    cout<<"10 spostamenti con RandomRobot"<<endl;
-    for(int i=0; i<10; i++){
-        cout<<Rbot.getPos()<<endl;
+    cout<<"Cerco l'arrivo con RandomRobot"<<endl;
+    while(!Rbot.end(maze)){
+        totalMovement++;
         Rbot.move(maze);
     }
+    cout<<"Robot arrivato, utilizzati "<<totalMovement<<" spostamenti"<<endl;
+    totalMovement = 0;
 
-    cout<<"10 spostamenti con RightHandRuleRobot"<<endl;
+    cout<<"Cerco l'arrivo con RightHandRuleRobot"<<endl;
     RightHandRuleRobot RHbot;
     RHbot.set(maze);
-    for(int i=0; i<10; i++){
-        cout<<RHbot.getPos()<<endl;
+    while(!RHbot.end(maze)){
+        totalMovement++;
         RHbot.move(maze);
     }
+    cout<<"Robot arrivato, utilizzati "<<totalMovement<<" spostamenti"<<endl;
 }

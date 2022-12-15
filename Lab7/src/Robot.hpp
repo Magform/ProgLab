@@ -15,4 +15,11 @@ string Robot::getPos(){
     return out;
 }
 
+bool Robot::end(const Maze& labirinto){
+    if(labirinto.get(yPos, xPos)==2){
+        return true;
+    }
+    return false;
+}
+
 #endif //Robot_hpp
